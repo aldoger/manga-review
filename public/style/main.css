@@ -1,0 +1,86 @@
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: rgb(218, 221, 223);
+}
+
+main {
+    width: 75%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto; 
+    box-sizing: border-box; 
+}
+
+
+
+.header{
+    padding-top: 5px;
+    width: 100%;
+    height: fit-content;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer{
+    width: 100%;
+    height: fit-content;
+    background-color: black;
+    color: white;
+    align-items: end;   
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+hr {
+    border: 1px solid black; 
+    margin: 20px 0;           
+    width: 100%;              
+}
+
+.manga-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.manga {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.manga-img {
+    width: 150px; /* Set a fixed size for the image */
+    height: auto;
+    float: left;
+    margin-right: 20px; /* Space between the image and the text */
+}
+
+.manga-info {
+    flex: 1; /* Makes sure the text section fills the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.manga-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.manga-info p {
+    margin: 5px 0;
+}

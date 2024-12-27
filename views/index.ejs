@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+<body>
+    <%- include('partials/header.ejs'); -%>
+    <main>
+        <h1>Aldoger</h1>
+        <h2>Manga List</h2>
+        <p>A tiny description or synopsis about the manga I've read about.
+            I listed with my top recommendation. <br />
+            Use the ISBN number to find it from your internet library or anywhere else to get the book cover. 
+        </p>
+        <hr/>
+        <div class="manga-list">
+            <% if (mangas.length > 0) { %>
+                <% mangas.forEach((manga) => { %>
+                    <div class="manga">
+                        <img class="manga-img" src="https://covers.openlibrary.org/b/isbn/<%= manga.bookisbn %>-M.jpg" alt="<%= manga.title %> cover" />
+                        <div class="manga-info">
+                            <h3><%= manga.title %></h3>
+                            <p><%= manga.author %></p>
+                            <p>Score: <%= manga.score %></p>
+                            <p><%= manga.description %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No mangas available.</p>
+            <% } %>
+        </div>
+    </main>
+    <%- include('partials/footer.ejs') -%>
+</body>
+</html>
