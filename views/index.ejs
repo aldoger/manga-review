@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Manga List</title>
     <link rel="stylesheet" href="/style/main.css">
 </head>
 <body>
     <%- include('partials/header.ejs'); -%>
     <main>
+        <div id="page-loading" class="loading-container">
+            <div class="loading-spinner"></div>
+        </div>
+
         <h1>Aldoger</h1>
         <h2>Manga List</h2>
         <p>A tiny description or synopsis about the manga I've read about.
@@ -20,7 +24,9 @@
             <% if (mangas.length > 0) { %>
                 <% mangas.forEach((manga) => { %>
                     <div class="manga">
-                        <img class="manga-img" src="https://covers.openlibrary.org/b/isbn/<%= manga.bookisbn %>-M.jpg" alt="<%= manga.title %> cover" />
+                        <div class="manga-img-container" data-isbn="<%= manga.bookisbn %>" data-title="<%= manga.title %>">
+                            
+                        </div>
                         <div class="manga-info">
                             <h3><%= manga.title %></h3>
                             <p><%= manga.author %></p>
@@ -34,6 +40,7 @@
             <% } %>
         </div>
     </main>
-    <%- include('partials/footer.ejs') -%>
+    <%- include('partials/footer.ejs'); -%>
+    <script src="/js/main.js"></script>
 </body>
 </html>
